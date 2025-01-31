@@ -10,23 +10,11 @@ class Deck {
 
     public Deck(){
         cartas = new ArrayList<>();
-        crearDeck();
-    }
-
-    private void crearDeck(){
         for (String palo : palos){
             for (String valor : valores){
                 cartas.add(new Card(palo, valor));
             }
         }
-    }
-
-    private void cartasRestantes(){
-        System.out.println("Quedan " + cartas.size() + " cartas");
-    }
-
-    private void deckVacio(){
-        System.out.println("No quedan cartas en el deck");
     }
 
     public void shuffle(){
@@ -68,6 +56,14 @@ class Deck {
             cartasRestantes();
             return hand;
         }
+    }
+
+    private void cartasRestantes(){
+        System.out.println("Quedan " + cartas.size() + " cartas");
+    }
+
+    private void deckVacio(){
+        System.out.println("No quedan cartas en el deck");
     }
 
     public static void main(String[] args) {
